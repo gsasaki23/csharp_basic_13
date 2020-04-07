@@ -55,13 +55,23 @@ namespace Basic_13
 
             Console.WriteLine("------------------------------");
             Console.WriteLine("Task Eleven:");
-            int[] testEleven = {1,-2,3,-4,5};
-            Console.WriteLine("Expecting max:5, min:-4, avg:0.66");
-            MinMaxAverage(testEleven);
+            // int[] testEleven = {1,-2,3,-4,5};
+            // Console.WriteLine("Expecting max:5, min:-4, avg:0.66");
+            // MinMaxAverage(testEleven);
             
             Console.WriteLine("------------------------------");
             Console.WriteLine("Task Twelve:");
+            // int[] testTwelve = {5,4,3,2,1};
+            // Console.WriteLine("Before: " + testTwelve[4] + " expecting 1");
+            // ShiftValues(testTwelve);
+            // Console.WriteLine("After: " + testTwelve[4] + " expecting 0");
             
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Task Thirteen:");
+            // int[] testThirteen = {1,-1};
+            // Console.WriteLine("Before: " + testThirteen[1] + " expecting -1");
+            // object[] answerThirteen = NumToString(testThirteen);
+            // Console.WriteLine("After: " + answerThirteen[1] + " expecting Dojo");
         }
 
         public static void PrintNumbers()
@@ -207,8 +217,36 @@ namespace Basic_13
             return;
         }
     
-
+        public static void ShiftValues(int[] numbers)
+        // 12: Given int array, shift every idx up one and add 0 to the end
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (i == numbers.Length - 1){
+                    numbers[i] = 0;
+                }
+                else {
+                    numbers[i] = numbers[i + 1];
+                }
+            }
+            return;
+        }
     
-    
+        public static object[] NumToString(int[] numbers)
+        // 13: Given int array, replace negative numbers with str 'Dojo'
+        {
+            object[] answer = new object [numbers.Length];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] < 0)
+                {
+                    answer[i] = "Dojo";
+                }
+                else {
+                    answer[i] = numbers[i];
+                }
+            }
+            return answer;
+        }
     }
 }
