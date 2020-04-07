@@ -34,7 +34,7 @@ namespace Basic_13
             
             Console.WriteLine("------------------------------");
             Console.WriteLine("Task Seven:");
-            // OddArray();
+            OddArray();
             
             Console.WriteLine("------------------------------");
             Console.WriteLine("Task Eight:");
@@ -143,19 +143,19 @@ namespace Basic_13
             return avg;
         }
     
-        public static List<int> OddArray()
+        public static int[] OddArray()
         // 7: Create array with odds 1~255
-        // *** Will use list instead of array, since the size will need to be dynamic. Might be wrong ***
+        // *** Would be 100x easier to use list instead of array, since list will be dynamic ***
         {
-            List<int> intList = new List<int>();
+            int[] intList = new int[256];
             for (int i = 1; i <= 255; i++)
             {
-                if (i % 2 != 0){
-                    intList.Add(i);
-                }
+                intList[i] = i;
             }
+            int[] answer = Array.FindAll(intList, x => x%2!=0);
             return intList;
         }
+
 
         public static int GreaterThanY(int[] numbers, int y)
         // 8: Given int array and int y, return # of array vals greater than y
